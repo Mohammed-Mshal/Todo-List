@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap">
+    <title>Todo App</title>
+</head>
+<body>
+    <div class="header transition dark">
+    </div>
+    <div class="container">
+        <div class="head-cont">
+            <h1 class="logo">TODO</h1>
+            <span class="toggle transition dark" data-mod=".dark"></span>
+        </div>
+        <div class="content">
+            <form class="dark transition" action="">
+                <span class="add dark transition"></span>
+                <input class="in dark" type="text" placeholder="Create a new Todo...">
+            </form>
+            <div class="cont-task">
+                <div class="tasks dark">
+                </div>
+                <div class="option dark">
+                    <div class="items"></div>
+                    <ul class="cate">
+                        <li data-cate="all" class="active">All</li>
+                        <li data-cate="active">Active</li>
+                        <li data-cate="complete">Complete</li>
+                    </ul>
+                    <div class="clear transition">Clear Completed</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer transition dark">
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
