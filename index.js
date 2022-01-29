@@ -16,8 +16,29 @@ let tasksArray = [];
 let arrayChecked = JSON.parse(localStorage.getItem(`checked`)) || [];
 
 // Start Function
+// Remove Element
 
+function remo(btRemove) {
+  // Remove From Page
+  btRemove.parentElement.remove();
+
+  // Remove From Checked Array In Local Storage If Found
+  arrayChecked.splice(
+    arrayChecked.indexOf(btRemove.parentElement.children[1].innerHTML),
+    1
+  );
+  localStorage.setItem(`checked`, JSON.stringify(arrayChecked));
+
+  // Remove From Tasks Array In Local Storage
+  tasksArray = [];
+  document.querySelectorAll(`.tasks .task div`).forEach((e) => {
+    tasksArray.push(e.innerHTML);
+  });
+  localStorage.setItem(`tasks`, JSON.stringify(tasksArray));
+  checkItems();
+}
 //  Add Task
+
 function funAdd(t) {
   let newTask = document.createElement(`div`);
   newTask.classList.add(`task`);
@@ -76,27 +97,6 @@ function checkItems() {
   });
   numItem.innerHTML = `${num} items left`;
 }
-// Remove Element
-function rem(btRemove) {
-  // Remove From Page
-  btRemove.parentElement.remove();
-
-  // Remove From Checked Array In Local Storage If Found
-  arrayChecked.splice(
-    arrayChecked.indexOf(btRemove.parentElement.children[1].innerHTML),
-    1
-  );
-  localStorage.setItem(`checked`, JSON.stringify(arrayChecked));
-
-  // Remove From Tasks Array In Local Storage
-  tasksArray = [];
-  document.querySelectorAll(`.tasks .task div`).forEach((e) => {
-    tasksArray.push(e.innerHTML);
-  });
-  localStorage.setItem(`tasks`, JSON.stringify(tasksArray));
-  checkItems();
-}
-
 // End Function
 
 // --------------------------
